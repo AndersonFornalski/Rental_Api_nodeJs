@@ -11,7 +11,7 @@ const userSchema  = new Schema({
 
     email:{
         type: String,
-        min:[4, "Too short, min 4 characters"],
+        min:[4, "Too short, min 4 characters"],   
         max:[32, "Too long, max 32 characters"],
         unique: true,
         lowercase: true,
@@ -28,6 +28,12 @@ const userSchema  = new Schema({
 
     rentals:[{type: Schema.Types.ObjectId, ref:"Rental"}]
 });
+
+
+userSchema.methods.hasSamePassword = function(requestedPassword){
+    return bcrypt.compareSync(requestedPassword, this.password);
+}
+
 
 userSchema.pre("save", function(next){
     const user = this;
