@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+
+<!-- MATERIAL DESIGN CSS -->
+<link
+	href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css"
+	rel="stylesheet">
+<script
+	src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+
+<!-- MATERIAL DESIGN ICONES -->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<link rel="stylesheet" href="css/addCarro.css">
+
+
+<title>Carros</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-lg">
+  <h4> <div class="first-text"></div><a class="navbar-brand" href="/"> Compre&venda </a> </h4>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">      
+      <li>
+      <a style="margin-left:40px;" href="/lista-de-usuarios"><button class="btn btn-outline-warning my-2 my-sm-0" >Usuarios</button></a>
+      </li> 
+      
+      <li>
+      <a style="margin-left:40px;" href="/lista-de-carros"><button class="btn btn-outline-warning my-2 my-sm-0" >Veiculos</button></a>
+      </li> 
+    </ul>
+    
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+         
+  </div>
+</nav>
+  
+  <br/>
+	
+
+
+	<div class="col-md-8">
+
+		<form action="saveCar" method="post" enctype="multipart/form-data" >
+		
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label>Título </label> 
+						<input type="text" name="titulo" class="form-control" placeholder="ex: Ford GT-40" >
+					</div>
+				</div>
+								
+				<div class="col">
+				</div>
+			</div>
+			
+
+			<div class="form-group">
+				<label>Descrição</label>
+				<textarea class="form-control" name="descricao" rows="3"
+					placeholder="Fale sobre seu produto..." ></textarea>
+			</div>
+			
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label>Marca </label> <input type="text" class="form-control"
+							name="marca" placeholder="ex: Porsche/Ford/Ferrari...">
+					</div>				
+				</div>
+				
+				<div class="col">
+					<div class="form-group">
+						<label>Modelo</label> <input type="text" class="form-control"
+							name="modelo" placeholder="ex: GT-40/Onix/206..." >
+					</div>				
+				</div>
+			
+			</div>
+			
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label>Cor</label> <input type="text" class="form-control"
+							name="cor" placeholder="ex: Azul/Vermelho/Prata..." >
+					</div>				
+				</div>
+				
+				<div class="col">
+					<div class="form-group">
+						<label>Ano</label> <input type="text" class="form-control"
+							name="ano" placeholder="ex: 2015/2016...">
+					</div>
+				</div>
+				
+				<div class="col">
+					<div class="form-group">
+						<label>Kilometragem</label> <input type="text" class="form-control"
+							name="kilometragem" placeholder="ex: 86.567 km">
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label>Telefone Fixo</label> <input type="text" class="form-control"
+							name="fixo" placeholder="ex: (00) 0000-0000... ">
+					</div>
+				</div>
+				
+				<div class="col">
+					<div class="form-group">
+						<label>Celular</label> <input type="text" class="form-control"
+							name="celular" placeholder="ex: (88) 99999-0000... ">
+					</div>
+				</div>
+				
+				<div class="col">
+					<div class="form-group">
+						<label>Preço</label> <input type="text" class="form-control"
+							name="preco" placeholder="ex: 2.500/34.65/... ">
+					</div>
+				</div>
+			</div>
+
+
+			
+			<!-- --IMAGENS-- -->
+			
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<input type="file" name="imageOne">
+					</div>
+				</div>
+				
+				<div class="col">
+					<div class="form-group">
+						<input type="file" name="imageTwo">
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<input type="file" name="imageThree">
+					</div>				
+				</div>
+				
+				<div class="col">
+					<div class="form-group">
+						<input type="file" name="imageFour">
+					</div>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<input type="file" name="imageFive">
+					</div>
+				</div>
+				
+				<div class="col">
+				</div>
+			</div>
+
+			<button type="submit" class="btn btn-success">Enviar</button>
+		</form>
+
+	</div>
+	<br/><br/><br/>
+	
+
+
+</body>
+</html>
